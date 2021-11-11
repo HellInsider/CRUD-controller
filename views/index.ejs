@@ -1,0 +1,28 @@
+<!-- index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel = "stylesheet" href="../styles.css">
+  <meta charset="UTF-8">
+  <title>CRUD controller</title>
+</head>
+<body>
+  <h1>This is my CRUD controller </h1>
+  <form action="/feedbacks" method="POST">
+    <input type="text1" placeholder="name" name="name" required><br>
+    <input type="text2" placeholder="desription" name="desription" required><br>
+    <button type="submit">Submit</button>
+  </form>
+  
+  <h2>Feedbacks</h2>
+  <ul class = "desriptions">
+      <% for(var i=0; i < feedbacks.length; i++){%>
+        <li class="feedback">
+          <span><%= feedbacks[i].name %>  </span>:
+          <span><%= feedbacks[i].desription %></span>
+        </li>
+      <% } %>
+  </ul>
+</body>
+</html>
+
